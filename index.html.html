@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bali · Nusa Penida · Komodo｜2026 秋日旅行 V2</title>
+<style>
+:root{--ink:#26342f;--green:#173c35;--sage:#dce5dc;--sand:#f4eee4;--gold:#a78350;--paper:#fbfaf7;--line:#ddd4c6}
+*{box-sizing:border-box} body{margin:0;background:var(--sand);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
+.wrap{max-width:1120px;margin:auto;padding:30px 20px 70px}
+.hero{background:linear-gradient(135deg,#173c35,#315b50);color:#fff;border-radius:28px;padding:48px 42px;position:relative;overflow:hidden}
+.hero:after{content:"BALI  ·  NUSA PENIDA  ·  KOMODO";position:absolute;right:-30px;bottom:18px;font:700 12px/1 Georgia;letter-spacing:3px;opacity:.22}
+.kicker{letter-spacing:3px;text-transform:uppercase;font-size:12px;opacity:.75}
+h1{font:600 clamp(36px,6vw,68px)/1.05 Georgia,serif;margin:14px 0}
+.hero p{max-width:720px;color:#e7eee9;margin:0}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px} .meta span{border:1px solid #ffffff35;border-radius:999px;padding:7px 13px;font-size:13px}
+.section{margin-top:30px} .section h2{font:600 28px Georgia,serif;margin:0 0 14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 8px 30px #5b49311a}
+.map{overflow:hidden;padding:0} .maphead{padding:24px 24px 12px} .maphead p{margin:5px 0;color:#66716b;font-size:14px}
+svg{width:100%;height:auto;display:block;background:#e9eee8}
+.legend{padding:12px 20px;font-size:12px;color:#6a746e;background:#f7f4ee}
+.days{display:grid;gap:14px} .day{display:grid;grid-template-columns:110px 1fr;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px}
+.dayno{font:700 15px Georgia,serif;color:var(--gold)} .day h3{margin:0;font:600 22px Georgia,serif} .day p{margin:3px 0 12px;color:#68736d}
+.chips{display:flex;flex-wrap:wrap;gap:8px} .chips a,.routebtn,.place a{text-decoration:none}
+.chips a{background:var(--sage);color:var(--green);border-radius:999px;padding:5px 10px;font-size:12px}
+.routebtn{display:inline-block;margin-top:14px;background:var(--green);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px} .place{display:flex;justify-content:space-between;gap:15px;padding:13px 0;border-bottom:1px solid var(--line)}
+.place span{display:block;font-size:12px;color:#7a837e;margin-top:2px} .place a{color:var(--gold);white-space:nowrap;font-size:12px}
+.note{background:#e8eee8;border-radius:18px;padding:18px 20px;color:#3d5149;font-size:14px}
+.footer{text-align:center;color:#7a837e;font-size:12px;margin-top:36px}
+@media(max-width:700px){.hero{padding:34px 25px} .day{grid-template-columns:1fr} .grid{grid-template-columns:1fr} .wrap{padding:18px 12px 50px}}
+
+/* V3 — detailed daily itinerary module */
+.detail-section{margin-top:42px}
+.detail-section>h2{font:600 40px/1.1 Georgia,serif;margin:0 0 28px;color:#173c35}
+.detail-days{display:grid;gap:18px}
+.detail-day{background:#fbfaf7;border:1px solid #ddd4c6;border-radius:27px;overflow:hidden;box-shadow:0 8px 28px rgba(70,57,40,.08)}
+.detail-head{min-height:100px;background:#edf2ed;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.detail-head h3{margin:0;font:600 25px/1.25 Georgia,"PingFang SC","Microsoft YaHei",sans-serif;color:#173c35}
+.mood{background:#5d7e72;color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;white-space:nowrap}
+.mood i{display:inline-block;width:16px;height:16px;margin-left:7px;vertical-align:-3px;border-radius:50%;background:#25d218;border:1px solid #173c35}
+.detail-content{padding:30px 32px 30px}
+.detail-row{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:9px 0}
+.detail-time{font-weight:700;font-size:18px;color:#c79a50;letter-spacing:.3px}
+.detail-text{font-size:17px;color:#314740}
+.detail-text b{font-weight:800;color:#1c3730}
+.detail-note{margin-top:18px;background:#f6f2eb;border-left:5px solid #c79a50;border-radius:0 15px 15px 0;padding:17px 20px;font-size:15px;color:#334740}
+@media(max-width:700px){
+  .detail-section>h2{font-size:32px}
+  .detail-head{padding:22px 20px;min-height:86px}
+  .detail-head h3{font-size:20px}
+  .detail-content{padding:22px 20px 24px}
+  .detail-row{grid-template-columns:72px 1fr;gap:12px}
+  .detail-time{font-size:15px}
+  .detail-text{font-size:15px}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<div class="kicker">03 OCT — 10 OCT 2026 · TRAVEL V2</div>
+<h1>Bali · Nusa Penida<br>· Komodo</h1>
+<p>一条从 Ubud 的稻田与咖啡、Canggu 的海滩俱乐部，到 Nusa Penida 与 Komodo 的海岛路线。地图负责“看懂旅程”，Google Maps 负责“真正导航”。</p>
+<div class="meta"><span>8 days / 7 nights</span><span>Ubud · Canggu · LBJ</span><span>Google Maps navigation</span></div>
+</section>
+
+<section class="section">
+<div class="card map">
+<div class="maphead"><h2>🗺️ 全程路线示意</h2><p>实线/虚线为旅行路线示意，并非实时道路轨迹；点击下面每个地点即可打开 Google Maps。Google Maps Maps URLs 无需 API Key，并可跨设备打开。</p></div>
+<svg viewBox="0 0 1000 440" role="img" aria-label="Bali Nusa Penida Komodo route map">
+<text x="55" y="32" font-size="18" font-family="Georgia" fill="#173c35">BALI</text>
+<text x="380" y="32" font-size="18" font-family="Georgia" fill="#173c35">NUSA PENIDA</text>
+<text x="760" y="32" font-size="18" font-family="Georgia" fill="#173c35">FLORES / KOMODO</text>
+<polyline points="106.0,257.2 121.7,134.7 99.1,185.5 100.9,218.0 98.6,205.8 106.1,228.1 106.0,257.2" fill="none" stroke="#8b6f47" stroke-width="3" stroke-dasharray="8 7" opacity=".8"/><polyline points="121.7,134.7 121.9,226.6 156.3,258.6 153.5,248.4 152.9,234.2 121.7,134.7" fill="none" stroke="#8b6f47" stroke-width="3" stroke-dasharray="8 7" opacity=".8"/><polyline points="106.0,257.2 886.5,129.1" fill="none" stroke="#8b6f47" stroke-width="3" stroke-dasharray="8 7" opacity=".8"/><polyline points="886.5,129.1 838.0,207.8 820.8,156.5 840.7,187.0 886.5,129.1" fill="none" stroke="#8b6f47" stroke-width="3" stroke-dasharray="8 7" opacity=".8"/>
+<circle cx="106.0" cy="257.2" r="6" fill="#173c35"/><text x="116.0" y="261.2" font-size="12" fill="#26342f">DPS</text><circle cx="121.7" cy="134.7" r="6" fill="#173c35"/><text x="131.7" y="138.7" font-size="12" fill="#26342f">Ubud</text><circle cx="99.1" cy="185.5" r="6" fill="#173c35"/><text x="109.1" y="189.5" font-size="12" fill="#26342f">Udara Bali</text><circle cx="100.9" cy="218.0" r="6" fill="#173c35"/><text x="110.9" y="222.0" font-size="12" fill="#26342f">FINNS</text><circle cx="98.6" cy="205.8" r="6" fill="#173c35"/><text x="108.6" y="209.8" font-size="12" fill="#26342f">La Brisa Bali</text><circle cx="121.9" cy="226.6" r="6" fill="#173c35"/><text x="131.9" y="230.6" font-size="12" fill="#26342f">Sanur Harbour</text><circle cx="156.3" cy="258.6" r="6" fill="#173c35"/><text x="166.3" y="262.6" font-size="12" fill="#26342f">Kelingking Beach</text><circle cx="153.5" cy="248.4" r="6" fill="#173c35"/><text x="163.5" y="252.4" font-size="12" fill="#26342f">Broken Beach</text><circle cx="152.9" cy="234.2" r="6" fill="#173c35"/><text x="162.9" y="238.2" font-size="12" fill="#26342f">Crystal Bay</text><circle cx="886.5" cy="129.1" r="6" fill="#173c35"/><text x="896.5" y="133.1" font-size="12" fill="#26342f">Labuan Bajo</text><circle cx="838.0" cy="207.8" r="6" fill="#173c35"/><text x="848.0" y="211.8" font-size="12" fill="#26342f">Padar Island</text><circle cx="820.8" cy="156.5" r="6" fill="#173c35"/><text x="830.8" y="160.5" font-size="12" fill="#26342f">Komodo National Park</text><circle cx="840.7" cy="187.0" r="6" fill="#173c35"/><text x="850.7" y="191.0" font-size="12" fill="#26342f">Pink Beach</text><circle cx="106.1" cy="228.1" r="6" fill="#173c35"/><text x="116.1" y="232.1" font-size="12" fill="#26342f">Seminyak</text><circle cx="103.6" cy="224.6" r="6" fill="#173c35"/><text x="113.6" y="228.6" font-size="12" fill="#26342f">Breeze</text>
+</svg>
+<div class="legend">📍 绿色圆点＝主要停留点　·　虚线＝跨区域/行程示意　·　具体驾车路线请以 Google Maps 当时导航为准</div>
+</div>
+</section>
+
+<section class="section">
+<h2>每日路线</h2>
+<div class="days">
+    <article class="day">
+      <div class="dayno">10/3 Sat</div>
+      <div class="daybody">
+        <h3>抵达 Bali · Ubud</h3>
+        <p>DPS 07:30 → Ubud · 老城慢逛 · 咖啡与晚餐</p>
+        <div class="chips"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=DPS+%E6%9C%BA%E5%9C%BA%2C+Bali%2C+Indonesia">DPS 机场 ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ubud%2C+Gianyar%2C+Bali%2C+Indonesia">Ubud ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ubud+Palace%2C+Ubud%2C+Bali%2C+Indonesia">Ubud Palace ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Seniman+Coffee+Studio%2C+Ubud%2C+Bali%2C+Indonesia">Seniman Coffee ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Compound+Warung%2C+Ubud%2C+Bali%2C+Indonesia">Compound Warung ↗</a></div>
+        <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Ubud%2C+Gianyar%2C+Bali%2C+Indonesia&destination=Compound+Warung%2C+Ubud%2C+Bali%2C+Indonesia&travelmode=driving">打开当天主路线</a>
+      </div>
+    </article>
+    <article class="day">
+      <div class="dayno">10/4 Sun</div>
+      <div class="daybody">
+        <h3>Ubud · 山谷与寺庙</h3>
+        <p>Tegallalang → Tirta Empul · 留出下午慢下来</p>
+        <div class="chips"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ubud%2C+Gianyar%2C+Bali%2C+Indonesia">Ubud ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Tegallalang+Rice+Terrace%2C+Bali%2C+Indonesia">Tegallalang Rice Terrace ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Tirta+Empul+Temple%2C+Bali%2C+Indonesia">Tirta Empul Temple ↗</a></div>
+        <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Ubud%2C+Gianyar%2C+Bali%2C+Indonesia&destination=Tirta+Empul+Temple%2C+Bali%2C+Indonesia&travelmode=driving">打开当天主路线</a>
+      </div>
+    </article>
+    <article class="day">
+      <div class="dayno">10/5 Mon</div>
+      <div class="daybody">
+        <h3>Ubud → Canggu · Wellness + Beach Club</h3>
+        <p>Udara → FINNS → La Brisa 日落</p>
+        <div class="chips"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ubud%2C+Gianyar%2C+Bali%2C+Indonesia">Ubud ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Udara+Bali+Yoga+Detox+%26+Spa%2C+Bali%2C+Indonesia">Udara Bali ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=FINNS+Beach+Club%2C+Bali%2C+Indonesia">FINNS Beach Club ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=La+Brisa+Bali%2C+Bali%2C+Indonesia">La Brisa Bali ↗</a></div>
+        <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Ubud%2C+Gianyar%2C+Bali%2C+Indonesia&destination=La+Brisa+Bali%2C+Bali%2C+Indonesia&travelmode=driving">打开当天主路线</a>
+      </div>
+    </article>
+    <article class="day">
+      <div class="dayno">10/6 Tue</div>
+      <div class="daybody">
+        <h3>Nusa Penida · 西线一日团</h3>
+        <p>约 06:00 出发 · Sanur 快船 · Kelingking / Broken Beach / Crystal Bay</p>
+        <div class="chips"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Canggu%2C+Bali%2C+Indonesia">Canggu ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Sanur+Harbour%2C+Bali%2C+Indonesia">Sanur Harbour ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Kelingking+Beach%2C+Nusa+Penida%2C+Indonesia">Kelingking Beach ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Broken+Beach%2C+Nusa+Penida%2C+Indonesia">Broken Beach ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Angel%27s+Billabong%2C+Nusa+Penida%2C+Indonesia">Angel&#x27;s Billabong ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Crystal+Bay%2C+Nusa+Penida%2C+Indonesia">Crystal Bay ↗</a></div>
+        <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Sanur+Harbour%2C+Bali%2C+Indonesia&destination=Crystal+Bay%2C+Nusa+Penida%2C+Indonesia&travelmode=driving">打开当天主路线</a>
+      </div>
+    </article>
+    <article class="day">
+      <div class="dayno">10/7 Wed</div>
+      <div class="daybody">
+        <h3>Canggu → Labuan Bajo</h3>
+        <p>早午餐 → DPS → 下午飞 LBJ · 港口晚餐</p>
+        <div class="chips"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Canggu%2C+Bali%2C+Indonesia">Canggu ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bali+Ngurah+Rai+International+Airport%2C+Bali%2C+Indonesia">DPS 伍拉·赖国际机场 ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Labuan+Bajo%2C+East+Nusa+Tenggara%2C+Indonesia">Labuan Bajo ↗</a></div>
+        <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Bali+Ngurah+Rai+International+Airport%2C+Bali%2C+Indonesia&destination=Labuan+Bajo%2C+East+Nusa+Tenggara%2C+Indonesia&travelmode=driving">打开当天主路线</a>
+      </div>
+    </article>
+    <article class="day">
+      <div class="dayno">10/8 Thu</div>
+      <div class="daybody">
+        <h3>Komodo · 出海一日</h3>
+        <p>Padar 日出 → 科莫多巨蜥 → Pink Beach → 浮潜</p>
+        <div class="chips"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Labuan+Bajo%2C+East+Nusa+Tenggara%2C+Indonesia">Labuan Bajo ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Padar+Island%2C+Komodo%2C+Indonesia">Padar Island ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Komodo+National+Park%2C+Indonesia">Komodo National Park ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pink+Beach%2C+Komodo%2C+Indonesia">Pink Beach ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Labuan+Bajo%2C+East+Nusa+Tenggara%2C+Indonesia">Labuan Bajo ↗</a></div>
+        <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Labuan+Bajo%2C+East+Nusa+Tenggara%2C+Indonesia&destination=Labuan+Bajo%2C+East+Nusa+Tenggara%2C+Indonesia&travelmode=driving">打开当天主路线</a>
+      </div>
+    </article>
+    <article class="day">
+      <div class="dayno">10/9 Fri</div>
+      <div class="daybody">
+        <h3>Labuan Bajo → Bali · 最后一个日落</h3>
+        <p>上午返 Bali → Spa → Seminyak → Breeze</p>
+        <div class="chips"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Labuan+Bajo%2C+East+Nusa+Tenggara%2C+Indonesia">Labuan Bajo ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bali+Ngurah+Rai+International+Airport%2C+Bali%2C+Indonesia">DPS 伍拉·赖国际机场 ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Seminyak%2C+Bali%2C+Indonesia">Seminyak ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Breeze+at+The+Samaya+Seminyak%2C+Bali%2C+Indonesia">Breeze at The Samaya ↗</a></div>
+        <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Labuan+Bajo%2C+East+Nusa+Tenggara%2C+Indonesia&destination=Breeze+at+The+Samaya+Seminyak%2C+Bali%2C+Indonesia&travelmode=driving">打开当天主路线</a>
+      </div>
+    </article>
+    <article class="day">
+      <div class="dayno">10/10 Sat</div>
+      <div class="daybody">
+        <h3>离境</h3>
+        <p>DPS 08:00 起飞</p>
+        <div class="chips"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Seminyak%2C+Bali%2C+Indonesia">Seminyak ↗</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bali+Ngurah+Rai+International+Airport%2C+Bali%2C+Indonesia">DPS 伍拉·赖国际机场 ↗</a></div>
+        <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Seminyak%2C+Bali%2C+Indonesia&destination=Bali+Ngurah+Rai+International+Airport%2C+Bali%2C+Indonesia&travelmode=driving">打开当天主路线</a>
+      </div>
+    </article></div>
+</section>
+
+
+<section class="detail-section">
+  <h2>Day by Day</h2>
+  <div class="detail-days">
+    
+    <article class="detail-day">
+      <div class="detail-head">
+        <h3>10/3 Sat · 抵达 Ubud</h3>
+        <span class="mood">轻松 <i></i></span>
+      </div>
+      <div class="detail-content">
+        <div class="detail-row"><div class="detail-time">07:30</div><div class="detail-text">DPS 抵达 → 出关取行李</div></div><div class="detail-row"><div class="detail-time">09:30</div><div class="detail-text">私人接送 → Ubud，酒店寄存/入住</div></div><div class="detail-row"><div class="detail-time">12:00</div><div class="detail-text">午餐 + 酒店休息</div></div><div class="detail-row"><div class="detail-time">15:00</div><div class="detail-text">Ubud Palace → Saraswati Temple → Ubud Market</div></div><div class="detail-row"><div class="detail-time">17:00</div><div class="detail-text">☕ <b>Seniman Coffee</b>：specialty coffee / 印尼产区豆</div></div><div class="detail-row"><div class="detail-time">19:00</div><div class="detail-text">🍛 <b>Compound Warung</b>：第一顿 Balinese local food</div></div>
+        <div class="detail-note">今天关键词：<b>不要赶。</b> 刚落地把 Ubud 当作慢散步的开场。</div>
+      </div>
+    </article>
+    <article class="detail-day">
+      <div class="detail-head">
+        <h3>10/4 Sun · Ubud · 稻田与圣泉</h3>
+        <span class="mood">松弛 <i></i></span>
+      </div>
+      <div class="detail-content">
+        <div class="detail-row"><div class="detail-time">08:30</div><div class="detail-text">早餐 + 咖啡，慢慢出门</div></div><div class="detail-row"><div class="detail-time">10:00</div><div class="detail-text">Tegallalang Rice Terrace：稻田散步 / 拍照</div></div><div class="detail-row"><div class="detail-time">12:30</div><div class="detail-text">午餐</div></div><div class="detail-row"><div class="detail-time">14:00</div><div class="detail-text">Tirta Empul Temple：圣泉寺参观</div></div><div class="detail-row"><div class="detail-time">16:30</div><div class="detail-text">回 Ubud，酒店休息 / 泳池</div></div><div class="detail-row"><div class="detail-time">19:00</div><div class="detail-text">晚餐：Ubud 本地菜，早点回酒店</div></div>
+        <div class="detail-note">今天关键词：<b>留白。</b> 不把下午塞满，给身体一点时间适应 Bali 的热和湿度。</div>
+      </div>
+    </article>
+    <article class="detail-day">
+      <div class="detail-head">
+        <h3>10/5 Mon · Ubud → Canggu · Wellness + Beach Club</h3>
+        <span class="mood">平衡 <i></i></span>
+      </div>
+      <div class="detail-content">
+        <div class="detail-row"><div class="detail-time">09:00</div><div class="detail-text">酒店早餐 → 退房</div></div><div class="detail-row"><div class="detail-time">10:30</div><div class="detail-text">前往 Seseh · <b>Udara Bali</b></div></div><div class="detail-row"><div class="detail-time">11:00</div><div class="detail-text">Yoga / Wellness · Spa / Hydrothermal circuit</div></div><div class="detail-row"><div class="detail-time">13:00</div><div class="detail-text">Udara 午餐 + 放松</div></div><div class="detail-row"><div class="detail-time">15:00</div><div class="detail-text">前往 <b>FINNS Beach Club</b>：海边躺躺 / 看海</div></div><div class="detail-row"><div class="detail-time">17:00</div><div class="detail-text">前往 <b>La Brisa Bali</b> · Sunset drinks</div></div><div class="detail-row"><div class="detail-time">18:15</div><div class="detail-text">🌅 La Brisa 日落 + 晚餐</div></div>
+        <div class="detail-note">今天关键词：<b>海边模式开启。</b> Udara 负责 wellness，FINNS 负责热闹，La Brisa 留给日落。</div>
+      </div>
+    </article>
+    <article class="detail-day">
+      <div class="detail-head">
+        <h3>10/6 Tue · Nusa Penida · 西线一日团</h3>
+        <span class="mood">高强度 <i></i></span>
+      </div>
+      <div class="detail-content">
+        <div class="detail-row"><div class="detail-time">06:00</div><div class="detail-text">Canggu 酒店接送 → Sanur</div></div><div class="detail-row"><div class="detail-time">08:00</div><div class="detail-text">Sanur → Nusa Penida 快船</div></div><div class="detail-row"><div class="detail-time">10:00</div><div class="detail-text">Kelingking Beach</div></div><div class="detail-row"><div class="detail-time">11:30</div><div class="detail-text">Broken Beach → Angel's Billabong</div></div><div class="detail-row"><div class="detail-time">14:00</div><div class="detail-text">午餐 / 前往 Crystal Bay</div></div><div class="detail-row"><div class="detail-time">15:00</div><div class="detail-text">Crystal Bay · 海边 / 浮潜视海况</div></div><div class="detail-row"><div class="detail-time">16:30</div><div class="detail-text">返码头 → Sanur → Canggu</div></div><div class="detail-row"><div class="detail-time">19:00</div><div class="detail-text">回酒店 · 简单晚餐 · 早睡</div></div>
+        <div class="detail-note">今天关键词：<b>只管跟团。</b> 这是全程最累的一天，晚上不要再安排 SPA 或夜生活。</div>
+      </div>
+    </article>
+    <article class="detail-day">
+      <div class="detail-head">
+        <h3>10/7 Wed · Canggu → Labuan Bajo</h3>
+        <span class="mood">转场 <i></i></span>
+      </div>
+      <div class="detail-content">
+        <div class="detail-row"><div class="detail-time">08:30</div><div class="detail-text">早餐 / 早午餐</div></div><div class="detail-row"><div class="detail-time">10:30</div><div class="detail-text">Canggu → DPS</div></div><div class="detail-row"><div class="detail-time">12:00</div><div class="detail-text">机场午餐 / 候机</div></div><div class="detail-row"><div class="detail-time">下午</div><div class="detail-text">✈️ DPS → Labuan Bajo (LBJ)</div></div><div class="detail-row"><div class="detail-time">傍晚</div><div class="detail-text">酒店入住 + 港口散步</div></div><div class="detail-row"><div class="detail-time">19:00</div><div class="detail-text">🍕 La Cucina / De Waroeng：轻松晚餐</div></div>
+        <div class="detail-note">今天关键词：<b>把节奏放下来。</b> 飞到 Flores 后不要再硬塞景点。</div>
+      </div>
+    </article>
+    <article class="detail-day">
+      <div class="detail-head">
+        <h3>10/8 Thu · Komodo · 出海一日</h3>
+        <span class="mood">高光 <i></i></span>
+      </div>
+      <div class="detail-content">
+        <div class="detail-row"><div class="detail-time">05:00</div><div class="detail-text">酒店出发 / 早餐打包</div></div><div class="detail-row"><div class="detail-time">06:30</div><div class="detail-text">⛵ 前往 Padar Island</div></div><div class="detail-row"><div class="detail-time">07:00</div><div class="detail-text">Padar 日出 / 登高看三湾</div></div><div class="detail-row"><div class="detail-time">10:00</div><div class="detail-text">Komodo National Park · 看 Komodo dragons</div></div><div class="detail-row"><div class="detail-time">12:00</div><div class="detail-text">船上午餐</div></div><div class="detail-row"><div class="detail-time">13:30</div><div class="detail-text">Pink Beach</div></div><div class="detail-row"><div class="detail-time">15:00</div><div class="detail-text">Snorkeling / manta：视当天海况</div></div><div class="detail-row"><div class="detail-time">17:00</div><div class="detail-text">返回 Labuan Bajo</div></div><div class="detail-row"><div class="detail-time">19:30</div><div class="detail-text">🍝 Baccalá / Happy Banana 晚餐</div></div>
+        <div class="detail-note">今天关键词：<b>全程高光。</b> Padar 尽量早，防晒、饮水和防滑鞋都值得准备。</div>
+      </div>
+    </article>
+    <article class="detail-day">
+      <div class="detail-head">
+        <h3>10/9 Fri · Labuan Bajo → Bali · 最后一个日落</h3>
+        <span class="mood">收尾 <i></i></span>
+      </div>
+      <div class="detail-content">
+        <div class="detail-row"><div class="detail-time">上午</div><div class="detail-text">早餐 + 最后逛一下 Labuan Bajo</div></div><div class="detail-row"><div class="detail-time">中午前后</div><div class="detail-text">✈️ LBJ → DPS</div></div><div class="detail-row"><div class="detail-time">下午</div><div class="detail-text">机场附近酒店寄存行李 / check-in</div></div><div class="detail-row"><div class="detail-time">15:00</div><div class="detail-text">Seminyak · Spa / 放松</div></div><div class="detail-row"><div class="detail-time">17:00</div><div class="detail-text"><b>Breeze at The Samaya</b> · Golden Hour / cocktails</div></div><div class="detail-row"><div class="detail-time">18:15</div><div class="detail-text">🌅 Beachfront sunset</div></div><div class="detail-row"><div class="detail-time">19:00</div><div class="detail-text">晚餐 · Breeze at The Samaya</div></div><div class="detail-row"><div class="detail-time">20:15</div><div class="detail-text">前往机场附近酒店 · 为次日早班机休息</div></div>
+        <div class="detail-note">今天关键词：<b>漂亮地结束。</b> Breeze 放在最后一个日落，晚餐后直接回机场附近，避免第二天赶路。</div>
+      </div>
+    </article>
+    <article class="detail-day">
+      <div class="detail-head">
+        <h3>10/10 Sat · 离境</h3>
+        <span class="mood">早起 <i></i></span>
+      </div>
+      <div class="detail-content">
+        <div class="detail-row"><div class="detail-time">05:30</div><div class="detail-text">起床 / 退房</div></div><div class="detail-row"><div class="detail-time">06:00</div><div class="detail-text">机场接送</div></div><div class="detail-row"><div class="detail-time">08:00</div><div class="detail-text">✈️ DPS 起飞</div></div>
+        <div class="detail-note">今天关键词：<b>不冒险。</b> 早班机前一晚住机场附近。</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+<h2>地点清单 · 一键打开 Google Maps</h2>
+<div class="card grid">
+    <div class="place">
+      <div><b>DPS 伍拉·赖国际机场</b><span>10/3, 10/7, 10/9</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bali+Ngurah+Rai+International+Airport%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Ubud</b><span>10/3–10/5</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ubud%2C+Gianyar%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Seniman Coffee</b><span>10/3</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Seniman+Coffee+Studio%2C+Ubud%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Ubud Palace</b><span>10/3</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ubud+Palace%2C+Ubud%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Compound Warung</b><span>10/3</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Compound+Warung%2C+Ubud%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Tegallalang Rice Terrace</b><span>10/4</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Tegallalang+Rice+Terrace%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Tirta Empul Temple</b><span>10/4</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Tirta+Empul+Temple%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Udara Bali</b><span>10/5</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Udara+Bali+Yoga+Detox+%26+Spa%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>FINNS Beach Club</b><span>10/5</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=FINNS+Beach+Club%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>La Brisa Bali</b><span>10/5</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=La+Brisa+Bali%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Sanur Harbour</b><span>10/6</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Sanur+Harbour%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Kelingking Beach</b><span>10/6</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Kelingking+Beach%2C+Nusa+Penida%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Broken Beach</b><span>10/6</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Broken+Beach%2C+Nusa+Penida%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Angel&#x27;s Billabong</b><span>10/6</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Angel%27s+Billabong%2C+Nusa+Penida%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Crystal Bay</b><span>10/6</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Crystal+Bay%2C+Nusa+Penida%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Labuan Bajo</b><span>10/7–10/9</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Labuan+Bajo%2C+East+Nusa+Tenggara%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Padar Island</b><span>10/8</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Padar+Island%2C+Komodo%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Komodo National Park</b><span>10/8</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Komodo+National+Park%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Pink Beach</b><span>10/8</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pink+Beach%2C+Komodo%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Breeze at The Samaya</b><span>10/9</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Breeze+at+The+Samaya+Seminyak%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div>
+    <div class="place">
+      <div><b>Seminyak</b><span>10/9</span></div>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Seminyak%2C+Bali%2C+Indonesia">Google Maps ↗</a>
+    </div></div>
+</section>
+
+<section class="section">
+<div class="note"><b>V2 版本的核心：</b>不使用 Google Maps API Key，而是采用官方 Maps URL。地点搜索、路线、导航均通过 Google Maps 链接打开；Google 官方文档明确说明 Maps URLs 不需要 API Key。</div>
+</section>
+
+<div class="footer">Bali · Nusa Penida · Komodo · October 2026 · itinerary v3</div>
+</div>
+</body></html>
